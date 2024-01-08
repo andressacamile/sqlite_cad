@@ -4,14 +4,14 @@ import os
 
 app = Flask(__name__)
 
-#Configuração do banco de dados
-DATABASE =os.path.join(os.path.dirname(__file__), 'clientes.db')
+# Configuração do banco de dados
+DATABASE = os.path.join(os.path.dirname(__file__), 'clientes.db')
 
 def create_table():
     conn = sqlite3.connect(DATABASE)
-    cursor =  conn.cursor()
+    cursor = conn.cursor()
     cursor.execute('''
-                CREATE TABLE IF NOT EXISTS clientes (
+        CREATE TABLE IF NOT EXISTS clientes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome TEXT NOT NULL,
             email TEXT NOT NULL,
@@ -20,11 +20,19 @@ def create_table():
     ''')
     conn.commit()
     conn.close()
-    print(" Tabela criada com sucesso")
-    
+    print("Tabela criada com sucesso")
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/cadastro')
+def cadastro():
+    return render_template('cadastro.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
 @app.route('/clientes')
 def listar_clientes():
@@ -36,7 +44,7 @@ def listar_clientes():
     conn.close()
     print("Clientes Cadastrados:", clientes)
     for cliente in clientes:
-        print(f"ID: {cliente['id']}, Nome: {cliente['nome']}, Email: {cliente['email']}, Telefone; {cliente['telefone']}")
+        print(f"ID: {cliente['id']}, Nome: {cliente['nome']}, Email: {cliente['email']}, Telefone: {cliente['telefone']}")
     return render_template('listar_clientes.html', clientes=clientes)
 
 @app.route('/cadastrar', methods=['POST'])
@@ -45,7 +53,7 @@ def cadastrar_cliente():
         nome = request.form['nome']
         email = request.form['email']
         telefone = request.form['telefone']
-        
+
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()
         try:
@@ -61,6 +69,3 @@ def cadastrar_cliente():
 
 if __name__ == '__main__':
     app.run(debug=True)
-        
-        
-     
