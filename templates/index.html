@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+
 </head>
 <body>
     <header>
@@ -11,7 +13,15 @@
         <a href="{{url_for('login')}}">login</a>
     </header>
     <main>
-
+        <div class="texto">
+        <h1>Cadastro de Clientes</h1><br>
+        <p>O site para vc cadastra seus clientes e melhorar o seu trabalho</p>
+        <p>Venha e tenha asesso a um cadastro onde podera deixar o nome email e numero dos seus clients</p>
+        <p>Eles Ficaram em uma lista super charmosa</p>
+        </div>
+     <div class="dimg">
+        <img src="{{url_for('static',filename='img/secretaria.png')}}" alt="">
+    </div>
     </main>
 </body>
 </html>

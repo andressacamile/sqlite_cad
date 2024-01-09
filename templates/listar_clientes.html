@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem de Clientes</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='listar_clientes.css')}}">
+
 </head>
-<body>
-    <h1>Listagem de Clientes</h1>
+<body> 
+    <h1>Listagem de Clientes</h1><br>
+    <div class="lista">
+   
 
     <table border="1">
         <thead>
@@ -28,8 +32,8 @@
             {% endfor %}
         </tbody>
     </table>
-
+</div>
     <br>
-    <a href="/">Voltar para a página inicial</a>
+    <a href="{{url_for('index')}}">Voltar para a página inicial</a>
 </body>
 </html>
