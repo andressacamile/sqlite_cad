@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Clientes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:#181818 ;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background-color: #A2A2A2;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 3px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h1>Cadastro de Clientes</h1>
-    
-    <form action="/cadastrar" method="post">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required><br>
-
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required><br>
-
-        <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" name="telefone" required><br>
-
-        <button type="submit">Cadastrar</button>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="/" method="post">
+      <input type="text" name="username" placeholder="Usuário" required><br>
+      <input type="password" name="password" placeholder="Senha" required><br>
+      <input type="submit" value="Entrar">
     </form>
-
-    <h2>Clientes Cadastrados</h2>
-    <a href="/clientes">Listar Clientes</a>
+  </div>
 </body>
 </html>
