@@ -98,7 +98,7 @@ def cadastrar_cliente():
             print(f"Erro durante o cadastro: {e}")
         finally:
             conn.close()
-    return redirect(url_for('listar_clientes'))
+    return render_template('cadastro.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

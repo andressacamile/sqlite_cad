@@ -7,16 +7,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: #faf9ff; /* Cor de fundo para o corpo */
+    background-color: #faf9ff; 
 }
 
 .box {
     display: flex;
     flex-direction: column;
-    background-color: #9296ee; /* Cor de fundo para a caixa */
+    background-color: #9296ee;
     padding: 50px;
     border-radius: 8px;
-    color: #fff; /* Cor do texto dentro da caixa */
+    color: #fff;
 }
 
 #login {
@@ -26,15 +26,15 @@ body {
 
 a {
     position: relative;
-    bottom: 20%;
-    color: #acaff2; /* Cor do link */
+    bottom: 10%;
+    color: #000000;
 }
 
 button {
     border: none;
     padding: 10px;
-    background-color: #c6c8f7; /* Cor de fundo para o botão */
-    color: #fff; /* Cor do texto no botão */
+    background-color: #c6c8f7; 
+    color: #fff;
 }
 
 input{
